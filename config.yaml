@@ -1,0 +1,37 @@
+# Basic config
+cuda: True
+project_name: "PPO-training-finaltest"
+exp_name: "Training with learning rate scheduler"
+exp_notes: "Train PPO and hope it converges"
+seed: 1
+max_episode_steps: 200
+update_timestep: 200
+max_training_timesteps: 100000
+
+# Save and load model
+save_model: False
+ckpt_save_path: "test"
+load_model: False
+ckpt_load_path: "model\PPO_PlatformEnv.pth"
+
+# Log results with wand
+log_result: False
+log_len_freq: 200
+log_reward_freq: 200
+
+# Actor-Critic Network
+a_hidden_dim: 128
+c_hidden_dim: 128
+
+# PPO training
+K_epochs: 40  # epochs of optimizing policy
+ppo_gamma: 0.99
+eps_clip: 0.2
+alpha_d: 0.5  # weight for loss of discrete action
+alpha: 0.5  # weight for loss of discrete action
+
+# Learning rate scheduler
+initial_lr: 0.001
+min_lr: 0.001
+lr_stepsize: 20000
+decrease_rate: 0
